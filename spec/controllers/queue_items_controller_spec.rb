@@ -104,4 +104,8 @@ describe QueueItemsController do
       expect(response).to redirect_to sign_in_path
     end
   end
+
+  describe "POST update queue" do
+
+  end
 end
