@@ -17,3 +17,6 @@ Category.create(name: "Comedy")
 
 logan = User.create(full_name: "Logan H", password: "password", email: "logan@example.com")
 Review.create(user: logan, video: monk, rating: 5, content: "This is a really good video")
+
+QueueItem.create(user: logan, video: monk)
+QueueItem.create(user: logan, video: monk)
