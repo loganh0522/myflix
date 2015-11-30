@@ -42,5 +42,6 @@ feature "User interacts with the queue" do
     expect(find("input[data-video-id='#{family_guy.id}']").value).to eq("2")
     expect(find("input[data-video-id='#{monk.id}']").value).to eq("3")
 
+    clear_email
   end
 end

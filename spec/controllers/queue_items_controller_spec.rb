@@ -179,7 +179,7 @@ describe QueueItemsController do
         alice = Fabricate(:user)
         video = Fabricate(:video)
         set_current_user(alice)
-        queue_item1= Fabricate(:queue_item, user: alice, position: 1, video: video)
+        queue_item1 = Fabricate(:queue_item, user: alice, position: 1, video: video)
         queue_item2 = Fabricate(:queue_item, user: alice, position: 2, video: video)
         post :update_queue, queue_items: [{id: queue_item1.id, position: 3}, {id: queue_item2.id, position: 2.1}]
 

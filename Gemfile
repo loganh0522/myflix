@@ -13,6 +13,7 @@ gem 'bootstrap_form'
 gem 'bcrypt'
 gem 'fabrication'
 gem 'faker'
+gem 'sidekiq'
 
 
 group :development do
@@ -26,10 +27,10 @@ group :development, :test do
   gem 'pry'
   gem 'pry-nav'
   gem 'rspec-rails', '2.99'
+  gem 'database_cleaner', '1.2.0'
 end
 
-group :test do
-  gem 'database_cleaner', '1.2.0'
+group :test do  
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'launchy'
