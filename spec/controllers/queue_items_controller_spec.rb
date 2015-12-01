@@ -8,9 +8,9 @@ describe QueueItemsController do
       queue_item1 = Fabricate(:queue_item, user: alice)
       queue_item2 = Fabricate(:queue_item, user: alice)
       get :index 
-      expect(assigns(:queue_items)).to eq([queue_item1, queue_item2])
+      expect(assigns(:queue_items)).to match_array([queue_item1, queue_item2])
     end
-
+    
     it_behaves_like "requires sign in" do 
       let(:action) {get :index}
     end   

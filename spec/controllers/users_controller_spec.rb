@@ -59,7 +59,7 @@ describe UsersController do
     end
 
     context "sends emails" do 
-      after { ActionMailer::Base.deliveries.clear }
+      before { ActionMailer::Base.deliveries.clear }
       
       it "does not send out an email with invalid inputs" do 
         post :create, user: {email: "joe@example.com"}
