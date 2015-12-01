@@ -14,6 +14,8 @@ gem 'bcrypt'
 gem 'fabrication'
 gem 'faker'
 gem 'sidekiq'
+gem 'figaro'
+gem 'sentry-raven'
 
 
 group :development do
