@@ -1,0 +1,19 @@
+machine:
+  ruby:
+    version: 2.1.5
+deployment:
+  production:
+    branch: master
+    commands:
+      - heroku maintenance:on --app prod-myflix
+      - heroku pg:backups capture --app prod-myflix
+      - git push git@heroku.com:prod-myflix.git $CIRCLE_SHA1:refs/heads/master
+      - heroku run rake db:migrate --app prod-myflix
+      - heroku maintenance:off --app prod-myflix
+  staging:
+    branch: staging
+    commands:
+      - heroku maintenance:on --app stag-myflix
+      - git push git@heroku.com:stag-myflix.git $CIRCLE_SHA1:refs/heads/master
+      - heroku run rake db:migrate --app stag-myflix
+      - heroku maintenance:off --app stag-myflix

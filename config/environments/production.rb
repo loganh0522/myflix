@@ -29,6 +29,4 @@ Myflix::Application.configure do
     :domain         => 'yourapp.heroku.com',
     :authentication => :plain 
   }
-
-  
 end
