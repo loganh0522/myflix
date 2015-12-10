@@ -114,7 +114,6 @@ describe UsersController do
       get :new_with_invitation_token, token: "12334"
       expect(response).to redirect_to expired_token_path
     end
-
   end
 end
 
