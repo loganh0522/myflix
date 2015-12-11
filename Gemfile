@@ -14,6 +14,10 @@ gem 'bcrypt'
 gem 'fabrication'
 gem 'faker'
 gem 'sidekiq'
+gem 'mini_magick'
+gem 'carrierwave'
+gem 'carrierwave-aws'
+gem 'stripe'
 
 
 group :development do
@@ -39,5 +43,6 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'carrierwave-aws'
 end
 

@@ -9,6 +9,13 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save 
       handle_invitation
+      Stripe.api_key = ENV["STRIPE_SECERT_KEY"]
+      Stripe::Charge.create(
+        :amount => 999,
+        :currency => "cad",
+        :card => params[:stripeToken],
+        :description => "Sign Up"
+      )
       AppMailer.delay.send_welcome_email(@user)
       redirect_to videos_path
     else 
