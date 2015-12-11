@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save 
       handle_invitation
-      Stripe.api_key = ENV["STRIPE_SECERT_KEY"]
+      Stripe.api_key = ENV["STRIPE_SECRET_KEY"]
       Stripe::Charge.create(
         :amount => 999,
         :currency => "cad",
