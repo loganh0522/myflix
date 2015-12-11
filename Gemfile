@@ -13,6 +13,7 @@ gem 'bootstrap_form'
 gem 'bcrypt'
 gem 'fabrication'
 gem 'faker'
+gem 'figaro'
 gem 'sidekiq'
 gem 'mini_magick'
 gem 'carrierwave'
@@ -43,6 +44,5 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem 'carrierwave-aws'
 end
 
