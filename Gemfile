@@ -33,6 +33,8 @@ group :development, :test do
   gem 'pry-nav'
   gem 'rspec-rails', '2.99'
   gem 'database_cleaner', '1.2.0'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :test do  
@@ -40,6 +42,7 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'capybara-email'
+  gem 'selenium-webdriver', '2.48.1'
 end
 
 group :production do

@@ -6,20 +6,14 @@ class UsersController < ApplicationController
   end
 
   def create 
-    @user = User.create(user_params)
-    if @user.save 
-      handle_invitation
-      Stripe.api_key = ENV["STRIPE_SECRET_KEY"]
-      Stripe::Charge.create(
-        :amount => 999,
-        :currency => "cad",
-        :card => params[:stripeToken],
-        :description => "Sign Up"
-      )
-      AppMailer.delay.send_welcome_email(@user)
+    @user = User.new(user_params)
+    result = UserSignup.new(@user).sign_up(params[:stripeToken], params[:invitation_token])
+    if result.successful? 
+      flash[:success] = "Thank you for registering with myFlix"
       redirect_to videos_path
     else 
-      render :new 
+      flash[:error] = result.error_message
+      render :new
     end
   end
 
@@ -44,12 +38,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:password, :email, :full_name)
   end
 
-  def handle_invitation
-   if params[:invitation_token].present? 
-      invitation = Invitation.where(token: params[:invitation_token]).first
-      @user.follow(invitation.inviter)
-      invitation.inviter.follow(@user)
-      invitation.update_column(:token, nil)
-    end
-  end
 end

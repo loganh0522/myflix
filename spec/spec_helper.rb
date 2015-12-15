@@ -6,6 +6,8 @@ require 'capybara/rails'
 require 'capybara/email/rspec'
 require 'sidekiq/testing/inline'
 require 'database_cleaner'
+require 'vcr'
+
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -14,6 +16,7 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
+Capybara.server_port = 52662
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -27,6 +30,14 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
+
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/cassettes'
+  c.hook_into :webmock
+  c.configure_rspec_metadata!
+  c.ignore_localhost = true
+end
 
 RSpec.configure do |config|
   # ## Mock Framework
@@ -44,6 +55,7 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
 
+  config.treat_symbols_as_metadata_keys_with_true_values = true
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
