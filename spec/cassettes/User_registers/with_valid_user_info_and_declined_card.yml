@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.stripe.com/v1/charges
+    uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&description=Sign+Up
+      string: card=tok_17ISOMBDRuCwc6R2bYKPtDtE&email=john%40example.com&plan=basic
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -22,20 +22,20 @@ http_interactions:
         Logan-Houstons-MacBook-Pro.local 14.3.0 Darwin Kernel Version 14.3.0: Mon
         Mar 23 11:59:05 PDT 2015; root:xnu-2782.20.48~5/RELEASE_X86_64 x86_64","hostname":"Logan-Houstons-MacBook-Pro.local"}'
       Content-Length:
-      - '43'
+      - '69'
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 402
+      message: Payment Required
     headers:
       Server:
       - nginx
       Date:
-      - Tue, 15 Dec 2015 16:17:30 GMT
+      - Tue, 15 Dec 2015 23:39:39 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '108'
+      - '134'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7XQLWGTReEr63g
+      - req_7XXTZ3FniFOVVV
       Stripe-Version:
       - '2015-10-16'
     body:
@@ -57,10 +57,12 @@ http_interactions:
       string: |
         {
           "error": {
-            "type": "invalid_request_error",
-            "message": "Must provide source or customer."
+            "message": "Your card was declined.",
+            "type": "card_error",
+            "param": "",
+            "code": "card_declined"
           }
         }
     http_version: 
-  recorded_at: Tue, 15 Dec 2015 16:17:31 GMT
+  recorded_at: Tue, 15 Dec 2015 23:39:39 GMT
 recorded_with: VCR 3.0.0

@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/tokens
     body:
       encoding: US-ASCII
-      string: card[cvc]=314&card[exp_month]=12&card[exp_year]=2018&card[number]=4242424242424242
+      string: card[cvc]=314&card[exp_month]=12&card[exp_year]=2018&card[number]=4000000000000002
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 15 Dec 2015 23:39:22 GMT
+      - Tue, 15 Dec 2015 23:39:29 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7XXT6uaf6z3Ikh
+      - req_7XXTnSEfzbaNG9
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_17ISO6BDRuCwc6R2lccQEOcu",
+          "id": "tok_17ISODBDRuCwc6R2pgUCZFK7",
           "object": "token",
           "card": {
-            "id": "card_17ISO6BDRuCwc6R2WdDob7Wi",
+            "id": "card_17ISODBDRuCwc6R2653RTlPH",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -77,27 +77,27 @@ http_interactions:
             "dynamic_last4": null,
             "exp_month": 12,
             "exp_year": 2018,
-            "fingerprint": "SAow76ubNBhomPEk",
+            "fingerprint": "zYitaWUhZLGVkDwA",
             "funding": "credit",
-            "last4": "4242",
+            "last4": "0002",
             "metadata": {},
             "name": null,
             "tokenization_method": null
           },
           "client_ip": "99.226.86.122",
-          "created": 1450222762,
+          "created": 1450222769,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Tue, 15 Dec 2015 23:39:22 GMT
+  recorded_at: Tue, 15 Dec 2015 23:39:29 GMT
 - request:
     method: post
-    uri: https://api.stripe.com/v1/charges
+    uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: amount=999&card=tok_17ISO6BDRuCwc6R2lccQEOcu&currency=usd&description=A+valid+charge
+      string: card=tok_17ISODBDRuCwc6R2pgUCZFK7&email=ania.conroy%40gerlach.info&plan=basic
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -114,20 +114,20 @@ http_interactions:
         Logan-Houstons-MacBook-Pro.local 14.3.0 Darwin Kernel Version 14.3.0: Mon
         Mar 23 11:59:05 PDT 2015; root:xnu-2782.20.48~5/RELEASE_X86_64 x86_64","hostname":"Logan-Houstons-MacBook-Pro.local"}'
       Content-Length:
-      - '84'
+      - '77'
   response:
     status:
-      code: 200
-      message: OK
+      code: 402
+      message: Payment Required
     headers:
       Server:
       - nginx
       Date:
-      - Tue, 15 Dec 2015 23:39:23 GMT
+      - Tue, 15 Dec 2015 23:39:30 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1436'
+      - '134'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -141,74 +141,20 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7XXTskqJhxNcyT
+      - req_7XXTFF3vd6wuH3
       Stripe-Version:
       - '2015-10-16'
-      Strict-Transport-Security:
-      - max-age=31556926; includeSubDomains
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_17ISO6BDRuCwc6R2UUMlPl2U",
-          "object": "charge",
-          "amount": 999,
-          "amount_refunded": 0,
-          "application_fee": null,
-          "balance_transaction": "txn_17ISO7BDRuCwc6R2eOYj299G",
-          "captured": true,
-          "created": 1450222762,
-          "currency": "usd",
-          "customer": null,
-          "description": "A valid charge",
-          "destination": null,
-          "dispute": null,
-          "failure_code": null,
-          "failure_message": null,
-          "fraud_details": {},
-          "invoice": null,
-          "livemode": false,
-          "metadata": {},
-          "paid": true,
-          "receipt_email": null,
-          "receipt_number": null,
-          "refunded": false,
-          "refunds": {
-            "object": "list",
-            "data": [],
-            "has_more": false,
-            "total_count": 0,
-            "url": "/v1/charges/ch_17ISO6BDRuCwc6R2UUMlPl2U/refunds"
-          },
-          "shipping": null,
-          "source": {
-            "id": "card_17ISO6BDRuCwc6R2WdDob7Wi",
-            "object": "card",
-            "address_city": null,
-            "address_country": null,
-            "address_line1": null,
-            "address_line1_check": null,
-            "address_line2": null,
-            "address_state": null,
-            "address_zip": null,
-            "address_zip_check": null,
-            "brand": "Visa",
-            "country": "US",
-            "customer": null,
-            "cvc_check": "pass",
-            "dynamic_last4": null,
-            "exp_month": 12,
-            "exp_year": 2018,
-            "fingerprint": "SAow76ubNBhomPEk",
-            "funding": "credit",
-            "last4": "4242",
-            "metadata": {},
-            "name": null,
-            "tokenization_method": null
-          },
-          "statement_descriptor": null,
-          "status": "succeeded"
+          "error": {
+            "message": "Your card was declined.",
+            "type": "card_error",
+            "param": "",
+            "code": "card_declined"
+          }
         }
     http_version: 
-  recorded_at: Tue, 15 Dec 2015 23:39:23 GMT
+  recorded_at: Tue, 15 Dec 2015 23:39:30 GMT
 recorded_with: VCR 3.0.0

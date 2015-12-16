@@ -19,6 +19,8 @@ gem 'mini_magick'
 gem 'carrierwave'
 gem 'carrierwave-aws'
 gem 'stripe'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 
 group :development do
