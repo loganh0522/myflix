@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 08 Jan 2016 00:35:47 GMT
+      - Fri, 08 Jan 2016 01:06:41 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7gAZyFv3MM9CkQ
+      - req_7gB4DKN6v9KUic
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_17QoEJBDRuCwc6R2L9vAWovL",
+          "id": "tok_17QoiDBDRuCwc6R2cQHeDT0v",
           "object": "token",
           "card": {
-            "id": "card_17QoEJBDRuCwc6R2bv9IBtVj",
+            "id": "card_17QoiDBDRuCwc6R2ZkgVyri9",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -85,19 +85,19 @@ http_interactions:
             "tokenization_method": null
           },
           "client_ip": "99.226.86.122",
-          "created": 1452213347,
+          "created": 1452215201,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Fri, 08 Jan 2016 00:35:48 GMT
+  recorded_at: Fri, 08 Jan 2016 01:06:41 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: card=tok_17QoEJBDRuCwc6R2L9vAWovL&email=gennaro%40shanahan.name&plan=basic
+      string: card=tok_17QoiDBDRuCwc6R2cQHeDT0v&email=vanea_jaskolski%40olson.com&plan=basic
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -114,7 +114,7 @@ http_interactions:
         Logan-Houstons-MacBook-Pro.local 14.3.0 Darwin Kernel Version 14.3.0: Mon
         Mar 23 11:59:05 PDT 2015; root:xnu-2782.20.48~5/RELEASE_X86_64 x86_64","hostname":"Logan-Houstons-MacBook-Pro.local"}'
       Content-Length:
-      - '74'
+      - '78'
   response:
     status:
       code: 200
@@ -123,11 +123,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 08 Jan 2016 00:35:49 GMT
+      - Fri, 08 Jan 2016 01:06:42 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '2363'
+      - '2367'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -141,7 +141,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7gAZbUL2QIoYxn
+      - req_7gB4EAf55201kG
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -150,16 +150,16 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "cus_7gAZoOcUQt3Ta4",
+          "id": "cus_7gB4dTxwRhAPkG",
           "object": "customer",
           "account_balance": 0,
-          "created": 1452213349,
+          "created": 1452215201,
           "currency": "cad",
-          "default_source": "card_17QoEJBDRuCwc6R2bv9IBtVj",
+          "default_source": "card_17QoiDBDRuCwc6R2ZkgVyri9",
           "delinquent": false,
           "description": null,
           "discount": null,
-          "email": "gennaro@shanahan.name",
+          "email": "vanea_jaskolski@olson.com",
           "livemode": false,
           "metadata": {},
           "shipping": null,
@@ -167,7 +167,7 @@ http_interactions:
             "object": "list",
             "data": [
               {
-                "id": "card_17QoEJBDRuCwc6R2bv9IBtVj",
+                "id": "card_17QoiDBDRuCwc6R2ZkgVyri9",
                 "object": "card",
                 "address_city": null,
                 "address_country": null,
@@ -179,7 +179,7 @@ http_interactions:
                 "address_zip_check": null,
                 "brand": "Visa",
                 "country": "US",
-                "customer": "cus_7gAZoOcUQt3Ta4",
+                "customer": "cus_7gB4dTxwRhAPkG",
                 "cvc_check": "pass",
                 "dynamic_last4": null,
                 "exp_month": 12,
@@ -194,20 +194,20 @@ http_interactions:
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/customers/cus_7gAZoOcUQt3Ta4/sources"
+            "url": "/v1/customers/cus_7gB4dTxwRhAPkG/sources"
           },
           "subscriptions": {
             "object": "list",
             "data": [
               {
-                "id": "sub_7gAZ7376WBSQMi",
+                "id": "sub_7gB4i7yCLS8rsw",
                 "object": "subscription",
                 "application_fee_percent": null,
                 "cancel_at_period_end": false,
                 "canceled_at": null,
-                "current_period_end": 1454891749,
-                "current_period_start": 1452213349,
-                "customer": "cus_7gAZoOcUQt3Ta4",
+                "current_period_end": 1454893601,
+                "current_period_start": 1452215201,
+                "customer": "cus_7gB4dTxwRhAPkG",
                 "discount": null,
                 "ended_at": null,
                 "metadata": {},
@@ -226,7 +226,7 @@ http_interactions:
                   "trial_period_days": null
                 },
                 "quantity": 1,
-                "start": 1452213349,
+                "start": 1452215201,
                 "status": "active",
                 "tax_percent": null,
                 "trial_end": null,
@@ -235,9 +235,9 @@ http_interactions:
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/customers/cus_7gAZoOcUQt3Ta4/subscriptions"
+            "url": "/v1/customers/cus_7gB4dTxwRhAPkG/subscriptions"
           }
         }
     http_version: 
-  recorded_at: Fri, 08 Jan 2016 00:35:49 GMT
+  recorded_at: Fri, 08 Jan 2016 01:06:42 GMT
 recorded_with: VCR 3.0.0
