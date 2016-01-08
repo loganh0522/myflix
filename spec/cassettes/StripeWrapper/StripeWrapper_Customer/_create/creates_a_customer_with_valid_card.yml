@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 15 Dec 2015 23:39:26 GMT
+      - Fri, 08 Jan 2016 00:35:47 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7XXTM7qNGZ9BwT
+      - req_7gAZyFv3MM9CkQ
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -58,10 +58,10 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_17ISOABDRuCwc6R2uKsdxzlM",
+          "id": "tok_17QoEJBDRuCwc6R2L9vAWovL",
           "object": "token",
           "card": {
-            "id": "card_17ISOABDRuCwc6R283iVvtjs",
+            "id": "card_17QoEJBDRuCwc6R2bv9IBtVj",
             "object": "card",
             "address_city": null,
             "address_country": null,
@@ -85,19 +85,19 @@ http_interactions:
             "tokenization_method": null
           },
           "client_ip": "99.226.86.122",
-          "created": 1450222766,
+          "created": 1452213347,
           "livemode": false,
           "type": "card",
           "used": false
         }
     http_version: 
-  recorded_at: Tue, 15 Dec 2015 23:39:26 GMT
+  recorded_at: Fri, 08 Jan 2016 00:35:48 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: card=tok_17ISOABDRuCwc6R2uKsdxzlM&email=caie%40sipes.io&plan=basic
+      string: card=tok_17QoEJBDRuCwc6R2L9vAWovL&email=gennaro%40shanahan.name&plan=basic
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -114,7 +114,7 @@ http_interactions:
         Logan-Houstons-MacBook-Pro.local 14.3.0 Darwin Kernel Version 14.3.0: Mon
         Mar 23 11:59:05 PDT 2015; root:xnu-2782.20.48~5/RELEASE_X86_64 x86_64","hostname":"Logan-Houstons-MacBook-Pro.local"}'
       Content-Length:
-      - '66'
+      - '74'
   response:
     status:
       code: 200
@@ -123,11 +123,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 15 Dec 2015 23:39:27 GMT
+      - Fri, 08 Jan 2016 00:35:49 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '2355'
+      - '2363'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -141,7 +141,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_7XXT1ejCcUuBVy
+      - req_7gAZbUL2QIoYxn
       Stripe-Version:
       - '2015-10-16'
       Strict-Transport-Security:
@@ -150,16 +150,16 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "cus_7XXTdbZBhm10un",
+          "id": "cus_7gAZoOcUQt3Ta4",
           "object": "customer",
           "account_balance": 0,
-          "created": 1450222767,
+          "created": 1452213349,
           "currency": "cad",
-          "default_source": "card_17ISOABDRuCwc6R283iVvtjs",
+          "default_source": "card_17QoEJBDRuCwc6R2bv9IBtVj",
           "delinquent": false,
           "description": null,
           "discount": null,
-          "email": "caie@sipes.io",
+          "email": "gennaro@shanahan.name",
           "livemode": false,
           "metadata": {},
           "shipping": null,
@@ -167,7 +167,7 @@ http_interactions:
             "object": "list",
             "data": [
               {
-                "id": "card_17ISOABDRuCwc6R283iVvtjs",
+                "id": "card_17QoEJBDRuCwc6R2bv9IBtVj",
                 "object": "card",
                 "address_city": null,
                 "address_country": null,
@@ -179,7 +179,7 @@ http_interactions:
                 "address_zip_check": null,
                 "brand": "Visa",
                 "country": "US",
-                "customer": "cus_7XXTdbZBhm10un",
+                "customer": "cus_7gAZoOcUQt3Ta4",
                 "cvc_check": "pass",
                 "dynamic_last4": null,
                 "exp_month": 12,
@@ -194,20 +194,20 @@ http_interactions:
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/customers/cus_7XXTdbZBhm10un/sources"
+            "url": "/v1/customers/cus_7gAZoOcUQt3Ta4/sources"
           },
           "subscriptions": {
             "object": "list",
             "data": [
               {
-                "id": "sub_7XXTXTTus5zh4E",
+                "id": "sub_7gAZ7376WBSQMi",
                 "object": "subscription",
                 "application_fee_percent": null,
                 "cancel_at_period_end": false,
                 "canceled_at": null,
-                "current_period_end": 1452901167,
-                "current_period_start": 1450222767,
-                "customer": "cus_7XXTdbZBhm10un",
+                "current_period_end": 1454891749,
+                "current_period_start": 1452213349,
+                "customer": "cus_7gAZoOcUQt3Ta4",
                 "discount": null,
                 "ended_at": null,
                 "metadata": {},
@@ -226,7 +226,7 @@ http_interactions:
                   "trial_period_days": null
                 },
                 "quantity": 1,
-                "start": 1450222767,
+                "start": 1452213349,
                 "status": "active",
                 "tax_percent": null,
                 "trial_end": null,
@@ -235,9 +235,9 @@ http_interactions:
             ],
             "has_more": false,
             "total_count": 1,
-            "url": "/v1/customers/cus_7XXTdbZBhm10un/subscriptions"
+            "url": "/v1/customers/cus_7gAZoOcUQt3Ta4/subscriptions"
           }
         }
     http_version: 
-  recorded_at: Tue, 15 Dec 2015 23:39:27 GMT
+  recorded_at: Fri, 08 Jan 2016 00:35:49 GMT
 recorded_with: VCR 3.0.0

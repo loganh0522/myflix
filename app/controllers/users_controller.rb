@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :require_user, only: [:show]
+  
   def new
     redirect_to home_path if current_user
     @user = User.new

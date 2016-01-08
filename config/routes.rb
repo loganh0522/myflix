@@ -39,4 +39,5 @@ Myflix::Application.routes.draw do
   resources :invitations 
 
   get 'register/:token', to: 'users#new_with_invitation_token', as: 'register_with_token'
+  mount StripeEvent::Engine, at: '/stripe_events'
 end

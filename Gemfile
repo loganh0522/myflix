@@ -19,6 +19,7 @@ gem 'mini_magick'
 gem 'carrierwave'
 gem 'carrierwave-aws'
 gem 'stripe'
+gem 'stripe_event'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 
@@ -33,10 +34,6 @@ end
 group :development, :test do
   gem 'pry'
   gem 'pry-nav'
-  gem 'rspec-rails', '2.99'
-  gem 'database_cleaner', '1.2.0'
-  gem 'vcr'
-  gem 'webmock'
 end
 
 group :test do  
@@ -45,6 +42,10 @@ group :test do
   gem 'launchy'
   gem 'capybara-email'
   gem 'selenium-webdriver', '2.48.1'
+  gem 'rspec-rails', '2.99'
+  gem 'database_cleaner', '1.2.0'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :production do
