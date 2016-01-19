@@ -61,7 +61,7 @@ describe "Create payment on a successful charge" do
               "address_zip_check"=> nil,
               "brand"=> "Visa",
               "country"=> "US",
-              "customer"=> nil,
+              "customer"=> 'cus_7XXWpi5x0hJMHu',
               "cvc_check"=> "pass",
               "dynamic_last4"=> nil,
               "exp_month"=> 12,

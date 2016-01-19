@@ -84,21 +84,7 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  config.before do
-    WebMock.enable!
-    if Capybara.current_driver != :rack_test
-      selenium_requests = %r{/((__.+__)|(hub/session.*))$}
-      WebMock.disable_net_connect! :allow => selenium_requests
-      WebMock.disable_net_connect! :allow => "127.0.0.1:#{Capybara.current_session.driver.server_port}" # this only works for capybara selenium and capybara-webkit
-    else
-      WebMock.disable_net_connect!
-    end
-  end
 
-  # for connections where we need to have network access we just tag it network
-  config.before(:each, :network => true) do
-    WebMock.disable!
-  end
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
